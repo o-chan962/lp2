@@ -96,25 +96,33 @@ section {
   align-content:center;
   border-radius: 2.125rem;
   max-width: 18.75rem;
+  min-width: 11.25rem;
   width:100%;
   height:3.625rem;
   font-size: 1.125rem;
   color:#fff;
-  font-weight:SemiBold;
+  font-weight:600;
+  margin:0 auto;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 980px) {
   .button {
       width:  18.75rem;
+      margin:0;
   }
 }
 
 
 /* 青色ボタン */
 .button-blue {
-  margin: 1.05rem auto 0;
   background-color: #46C4DB;
-  border-color: #46C4DB;
+  margin-bottom: 1.3rem;
+}
+
+@media (min-width: 768px) {
+  .button-blue {
+    margin-bottom: 0rem;
+  }
 }
 
 .button-blue:hover {
@@ -124,14 +132,21 @@ section {
 
 /* 緑色ボタン */
 .button-green {
-  margin: 1.25rem auto 0 ;
   background-color: #5DD5AB;
-  border-color: #5DD5AB;
+  max-width:  18.75rem;
+  width:100%;
+  white-space:nowrap;
 }
 
 .button-green:hover {
   background-color: #fff;
   color:#5DD5AB;
+}
+
+@media (min-width: 980px) {
+  .button-green {
+    width:  18.75rem;
+  }
 }
 
 /* カバー
@@ -228,7 +243,7 @@ span.cover__catch-name-text{
 
 
 p.cover__catch-copy{
-  font-family: Noto serif JP;
+  font-family: 'Noto serif JP';
   font-size:  1.25rem;
   letter-spacing: 5.9px;
   line-height: 2.2;
@@ -257,20 +272,34 @@ p.cover__catch-copy{
     display: flex;
     width: 100%;
     max-width: 62.5rem;
-    margin:3.3rem auto 3.1rem;
-
+    margin:3rem auto 3.1rem;
+    padding-top: 2.3rem;
+    padding-bottom: 1.225rem;
+    padding-left: 3.3%;
+    padding-right: 3.3%;
+    line-height: 1.8;
+    justify-content: left;
+    column-gap: 6.5%;
   }
 }
 
 .shopping__text{
   display: grid;
   text-align: center;
+  margin-bottom: 1rem;
 }
+
+@media (min-width: 768px) {
+  .shopping__text{
+    text-align: left;
+  }
+}
+
 
 span.shopping__text-name{
   display: inline-block;
   font-size:1.125rem;
-  letter-spacing: 1.6px;
+  letter-spacing: 2.6px;
 }
 
 @media (min-width: 768px) {
@@ -291,14 +320,26 @@ span.shopping__text-cost{
   }
 }
 
+.shopping__button {
+  display: block;
+  gap: 2rem;
+  margin: 0.4rem auto 0;
+}
+
+@media (min-width: 768px) {
+  .shopping__button {
+    display: flex;
+    column-gap: 2rem;
+    margin: 0.4rem 0 0;
+  }
+}
+
 /* コンセプト
 ------------------------------------------ */
 .concept{
   background-image: url("/assets/image/concept_sp.png");
-  background-position: center;
   background-size: cover;
   color: #fff;
-  background-position: top;
   min-height: 42.5rem;
   background-position: top;
   position: relative;
@@ -313,7 +354,8 @@ span.shopping__text-cost{
   .concept {
     background-image: url("/assets/image/concept_pc.png");
     padding:0;
-    height: 34.375rem;
+    height: 47.4vh;
+    min-height: 42.5rem;
   }
 }
 
@@ -337,13 +379,16 @@ span.shopping__text-cost{
 
 @media (min-width: 768px) {
   .concept .section-title {
-    margin: 5rem auto 2.75rem;
+    margin: 5rem auto 0.45rem;
   }
 
   .concept .section-title__main{
-    font-size:2.813rem;
+    font-size: 2.413rem;
   }
 
+  .concept .section-title__sub{
+    text-align: left;
+  }
 }
 
 .concept__section.container{
@@ -357,9 +402,12 @@ span.shopping__text-cost{
 
 @media (min-width: 768px) {
   .concept__section.container{
-    width: 50%;
+    width: 28%;
     text-align: right;
-    margin-left:auto;
+    right:0;
+    top: 8.4%;
+    right:16.8%;
+    padding:0;
   }
 }
 
@@ -369,20 +417,39 @@ p.concept__section-text {
   font-size: 0.875rem;
   padding-left:1rem;
   padding-right:1rem;
+  text-align: left;
 }
 
+@media (min-width: 768px) {
+  p.concept__section-text {
+    padding-left:0rem;
+    padding-right:0rem;
+  }
+}
+
+/* お客様の声
+------------------------------------------ */
 section.voices {
   margin-bottom: 2rem;
 }
 
-
-/* お客様の声
------------------------------------------- */
-
-
+@media (min-width: 768px) {
+  section.voices {
+    margin-bottom: 7rem;
+  }
+}
 
 .voices__section.container {
   padding-bottom: 0.8rem;
+}
+
+@media (min-width: 768px) {
+  .voices__section.container {
+    padding-top:0rem;
+    padding-bottom: 0rem;
+    max-width: 1160px;
+    margin: 0 auto;
+  }
 }
 
 /* 画像 */
@@ -392,8 +459,10 @@ section.voices {
   margin: 0 auto;
 }
 
-/* carousel-itemの高さを32remに指定 */
-.voices__slick-item {
+@media (min-width: 768px) {
+  .voices__comment img{
+    width:37%;
+  }
 }
 
 /*carousel-item直下の子要素imgタグに設定 */
@@ -410,7 +479,7 @@ section.voices {
 
 @media (min-width: 768px) {
 .voices__slick .slick-slide {
-  margin:0 10px;
+  margin:0 23px;
 }
 }
 
@@ -466,6 +535,13 @@ section.voices {
   height: 21.5rem;
   font-size: 0.875rem;
   margin:0 auto;
+}
+
+@media (min-width: 768px) {
+  .voices__comment{
+    height: 24.3rem;
+    padding-top:2.4rem;
+  }
 }
 
 .voices__comment-name{
@@ -534,6 +610,11 @@ section.voices {
   padding-bottom: 0.5rem;
 }
 
+@media (min-width: 768px) {
+  .qa .section-title {
+    margin: 2.5rem auto 0.7rem;
+  }
+}
 
 .qa__item{
   margin: 0 auto 1.35rem;
